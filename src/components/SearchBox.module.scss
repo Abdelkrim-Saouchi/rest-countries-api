@@ -1,0 +1,19 @@
+@use '../colors' as *;
+
+.container {
+  max-width: 350px;
+  background-color: $white;
+  padding-inline: 1em;
+}
+
+.container input {
+  border: transparent;
+  outline: transparent;
+  width: 80%;
+  height: 100%;
+  padding: 1em 2em;
+}
+
+.container svg {
+  opacity: 0.6;
+}

@@ -1,0 +1,14 @@
+@use '../colors' as *;
+@use '../mixins' as *;
+
+.home {
+  background-color: $very-light-gray;
+  min-height: 100dvh;
+  @include container;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
