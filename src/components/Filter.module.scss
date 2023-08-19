@@ -1,0 +1,24 @@
+@use '../colors' as *;
+
+.dropDownContainer {
+  position: relative;
+  width: 180px;
+}
+
+.dropDownLabel {
+  padding: 1em 1.5em;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  margin-bottom: 0.4em;
+}
+
+.dropDownMenu {
+  list-style: none;
+  background-color: $white;
+  padding: 1em 1.5em;
+  position: absolute;
+  width: 100%;
+}
