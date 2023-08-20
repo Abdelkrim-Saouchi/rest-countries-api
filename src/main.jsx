@@ -5,7 +5,7 @@ import App from './App.jsx';
 import './App.scss';
 import Layout from './components/Layout.jsx';
 import CountryPage from './pages/CountryPage.jsx';
-import Home from './pages/Home.jsx';
+import Home, { loader as homeLoader } from './pages/Home.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+        loader: homeLoader,
       },
       {
         path: 'country',
