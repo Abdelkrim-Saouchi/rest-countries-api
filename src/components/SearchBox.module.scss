@@ -2,10 +2,11 @@
 @use '../mixins' as *;
 
 .container {
-  max-width: 350px;
+  width: 30%;
   background-color: $white;
   padding-inline: 1em;
   @include shadow();
+  @include border-shape();
 }
 
 .container input {
@@ -18,4 +19,10 @@
 
 .container svg {
   opacity: 0.6;
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 100%;
+  }
 }

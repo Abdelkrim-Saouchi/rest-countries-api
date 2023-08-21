@@ -24,3 +24,9 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+@media (max-width: 650px) {
+  .header {
+    @include container(1.2em);
+  }
+}

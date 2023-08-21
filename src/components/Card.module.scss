@@ -4,10 +4,13 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.8em;
   background-color: $white;
   max-width: 250px;
   @include shadow();
+  @include border-shape();
+  padding-bottom: 0.5em;
+  overflow: hidden;
 }
 
 .card img {
@@ -28,4 +31,10 @@
 
 .card span {
   font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .card {
+    max-width: 300px;
+  }
 }

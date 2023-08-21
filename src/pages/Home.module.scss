@@ -11,9 +11,9 @@
 .searchRow {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 2em;
-  justify-content: space-between;
 }
 
 .countries {
@@ -21,4 +21,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 4em;
+}
+
+@media (max-width: 650px) {
+  .home {
+    @include container(1.2em);
+  }
+}
+
+@media (max-width: 490px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

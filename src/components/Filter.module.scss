@@ -4,23 +4,37 @@
 .dropDownContainer {
   position: relative;
   width: 180px;
-  @include shadow();
 }
 
 .dropDownLabel {
+  height: 100%;
   padding: 1em 1.5em;
   background-color: $white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2em;
-  margin-bottom: 0.4em;
+
+  @include shadow();
+  @include border-shape();
 }
 
 .dropDownMenu {
+  margin-top: 0.4em;
   list-style: none;
   background-color: $white;
-  padding: 1em 1.5em;
+  padding: 1em 1em;
   position: absolute;
   width: 100%;
+  @include shadow();
+  @include border-shape();
+}
+
+.dropDownMenu li {
+  padding: 0.4em 0.2em;
+  cursor: pointer;
+
+  &:is(:hover, :focus) {
+    background-color: $very-light-gray;
+  }
 }
