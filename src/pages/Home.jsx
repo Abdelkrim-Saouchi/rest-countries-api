@@ -33,7 +33,7 @@ const Home = () => {
             key={country.name.official}
             flagUrl={country.flags.svg}
             flagAlt={country.flags.alt}
-            name={country.name.official}
+            name={country.name.common}
             population={country.population}
             region={country.region}
             capital={country.capital}
