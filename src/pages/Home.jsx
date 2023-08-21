@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { getCountries } from '../api/getCountries';
 import Card from '../components/Card';
@@ -11,15 +12,23 @@ export async function loader() {
 
 const Home = () => {
   const data = useLoaderData();
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const filteredData = selectedOption
+    ? data.filter((country) => country.region === selectedOption)
+    : data;
 
   return (
     <main className={styles.home}>
       <div className={styles.searchRow}>
         <Searchbox />
-        <Filter />
+        <Filter
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
+        />
       </div>
       <div className={styles.countries}>
-        {data.map((country) => (
+        {filteredData.map((country) => (
           <Card
             key={country.name.official}
             flagUrl={country.flags.svg}

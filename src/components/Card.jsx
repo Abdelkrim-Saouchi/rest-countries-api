@@ -2,10 +2,6 @@ import PropTypes from 'prop-types';
 import styles from './Card.module.scss';
 
 const Card = ({ flagUrl, flagAlt, name, population, region, capital }) => {
-  console.log(`${name}, capital: ${capital}`);
-  console.log(Array.isArray(capital));
-  console.log(capital);
-
   return (
     <div className={styles.card}>
       <img src={flagUrl} alt={flagAlt} />

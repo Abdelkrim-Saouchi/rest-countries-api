@@ -1,18 +1,18 @@
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import styles from './Filter.module.scss';
 
-const Filter = () => {
+const Filter = ({ selectedOption, setSelectedOption }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
 
   const options = [
-    { value: 'africa', label: 'Africa' },
-    { value: 'america', label: 'America' },
-    { value: 'asia', label: 'Asia' },
-    { value: 'europe', label: 'Europe' },
-    { value: 'oceania', label: 'Oceania' },
+    { value: 'Africa', label: 'Africa' },
+    { value: 'Americas', label: 'Americas' },
+    { value: 'Asia', label: 'Asia' },
+    { value: 'Europe', label: 'Europe' },
+    { value: 'Oceania', label: 'Oceania' },
   ];
 
   const handleShowMenu = (e) => {
@@ -53,6 +53,18 @@ const Filter = () => {
       </div>
     </>
   );
+};
+
+Filter.propTypes = {
+  selectedOption: PropTypes.oneOf([
+    null,
+    'Africa',
+    'America',
+    'Asia',
+    'Europe',
+    'Oceania',
+  ]),
+  setSelectedOption: PropTypes.func,
 };
 
 export default Filter;
