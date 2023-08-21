@@ -1,14 +1,26 @@
 @use '../colors' as *;
+@use '../mixins' as *;
 
 .header {
+  background-color: $white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 3em;
+  @include container();
+  padding-block: 1em;
+  position: relative;
+  z-index: 1;
+  @include shadow();
+}
+
+.header h1 {
+  font-size: 1.4em;
+  font-weight: 800;
 }
 
 .header button {
   background-color: transparent;
   border: transparent;
-  color: $dark-gray;
+  font-weight: 600;
+  cursor: pointer;
 }

@@ -1,21 +1,31 @@
 @use '../colors' as *;
+@use '../mixins' as *;
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding: 1em;
   background-color: $white;
   max-width: 250px;
+  @include shadow();
 }
 
 .card img {
-  object-fit: fill;
+  object-fit: cover;
   object-position: center;
   width: 100%;
-  min-height: 50%;
+  height: 50%;
 }
 
 .card h2 {
   font-size: 1em;
+  padding-inline: 1em;
+}
+
+.card div {
+  padding-inline: 1em;
+}
+
+.card span {
+  font-weight: 600;
 }

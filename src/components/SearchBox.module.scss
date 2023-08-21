@@ -1,9 +1,11 @@
 @use '../colors' as *;
+@use '../mixins' as *;
 
 .container {
   max-width: 350px;
   background-color: $white;
   padding-inline: 1em;
+  @include shadow();
 }
 
 .container input {

@@ -12,9 +12,15 @@ const Card = ({ flagUrl, flagAlt, name, population, region, capital }) => {
 
       <h2>{name}</h2>
       <div>
-        <p>Population: {population}</p>
-        <p>Region: {region}</p>
-        <p>Capital: {capital ? capital[0] : 'unknown'}</p>
+        <p>
+          <span>Population:</span> {population.toLocaleString('en-US')}
+        </p>
+        <p>
+          <span>Region:</span> {region}
+        </p>
+        <p>
+          <span>Capital:</span> {capital ? capital[0] : 'unknown'}
+        </p>
       </div>
     </div>
   );

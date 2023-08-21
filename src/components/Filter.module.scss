@@ -1,8 +1,10 @@
 @use '../colors' as *;
+@use '../mixins' as *;
 
 .dropDownContainer {
   position: relative;
   width: 180px;
+  @include shadow();
 }
 
 .dropDownLabel {

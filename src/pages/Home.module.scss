@@ -5,17 +5,20 @@
   background-color: $very-light-gray;
   min-height: 100dvh;
   @include container;
+  padding-block: 2em;
 }
 
 .searchRow {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
   justify-content: space-between;
 }
 
 .countries {
+  margin-block: 2em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2em;
-  justify-items: center;
+  gap: 4em;
 }
