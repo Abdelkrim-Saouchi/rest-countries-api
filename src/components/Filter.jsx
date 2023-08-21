@@ -59,7 +59,7 @@ Filter.propTypes = {
   selectedOption: PropTypes.oneOf([
     null,
     'Africa',
-    'America',
+    'Americas',
     'Asia',
     'Europe',
     'Oceania',
