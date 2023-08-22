@@ -49,7 +49,20 @@
 }
 
 .borders {
-  span {
+  display: flex;
+  align-items: start;
+
+  p {
     font-weight: 600;
+    white-space: nowrap;
+    margin-block: 0.6em;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em;
+    margin-block: 0.6em;
+    margin-left: 0.3em;
   }
 }

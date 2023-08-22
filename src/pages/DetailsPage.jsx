@@ -2,16 +2,24 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLoaderData } from 'react-router-dom';
 import { getCountries } from '../api/getCountries';
+import CountryTag from '../components/CountryTag';
 import styles from './DetailsPage.module.scss';
 
 export async function loader() {
   const countries = await getCountries();
-  return { ...countries[0] };
+  return [countries, countries[100]];
 }
 
 const DetailsPage = () => {
-  const data = useLoaderData();
-  console.log(data);
+  const [countries, targetCountry] = useLoaderData();
+
+  // transform country's Abbreviation to full name
+  const targetBordersAbr = targetCountry.borders || [];
+  console.log(targetBordersAbr);
+  const targetBordersNames = targetBordersAbr.map((targetBorder) => {
+    return countries.find((country) => country.cca3 === targetBorder).name
+      .common;
+  });
 
   return (
     <main className={styles.detailsPage}>
@@ -20,47 +28,49 @@ const DetailsPage = () => {
       </button>
 
       <div className={styles.content}>
-        <img src={data.flags.svg} alt={data.flags.alt} />
+        <img src={targetCountry.flags.svg} alt={targetCountry.flags.alt} />
 
         <div className={styles.details}>
-          <h2>{data.name.common}</h2>
+          <h2>{targetCountry.name.common}</h2>
 
           <div className={styles.info}>
             <div className="intro">
               <p>
                 <span>Native Name:</span>{' '}
-                {Object.values(data.name.nativeName)
+                {Object.values(targetCountry.name.nativeName)
                   .map((name) => name.common)
                   .join(', ')}
               </p>
               <p>
                 <span>Population:</span>{' '}
-                {data.population.toLocaleString('en-US')}
+                {targetCountry.population.toLocaleString('en-US')}
               </p>
               <p>
-                <span>Region:</span> {data.region}
+                <span>Region:</span> {targetCountry.region}
               </p>
               <p>
-                <span>Sub Region:</span> {data.subregion}
+                <span>Sub Region:</span> {targetCountry.subregion}
               </p>
               <p>
                 <span>Capital:</span>{' '}
-                {data.capital ? data.capital.join(', ') : 'Unknown'}
+                {targetCountry.capital
+                  ? targetCountry.capital.join(', ')
+                  : 'Unknown'}
               </p>
             </div>
             <div className="more">
               <p>
-                <span>Top Level Domain:</span> {data.tld.join(', ')}
+                <span>Top Level Domain:</span> {targetCountry.tld.join(', ')}
               </p>
               <p>
                 <span>Currencies:</span>{' '}
-                {Object.values(data.currencies)
+                {Object.values(targetCountry.currencies)
                   .map((currency) => currency.name)
                   .join(', ')}
               </p>
               <p>
                 <span>Languages:</span>{' '}
-                {Object.values(data.languages)
+                {Object.values(targetCountry.languages)
                   .map((lang) => lang)
                   .join(', ')}
               </p>
@@ -68,9 +78,15 @@ const DetailsPage = () => {
           </div>
 
           <div className={styles.borders}>
-            <p>
-              <span>Border Countries:</span>
-            </p>
+            <p>Border Countries:</p>
+
+            <div>
+              {targetBordersNames.length === 0
+                ? 'None'
+                : targetBordersNames.map((country) => (
+                    <CountryTag key={country} name={country} />
+                  ))}
+            </div>
           </div>
         </div>
       </div>
