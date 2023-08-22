@@ -13,22 +13,35 @@ export async function loader() {
 const Home = () => {
   const data = useLoaderData();
   const [selectedOption, setSelectedOption] = useState(null);
+  const [searchField, setSearchField] = useState('');
 
+  const handleOnChange = (e) => {
+    setSearchField(e.target.value);
+  };
+
+  // filter countries by region
   const filteredData = selectedOption
     ? data.filter((country) => country.region === selectedOption)
     : data;
 
+  // filter countries by name search
+  const searchData = filteredData.filter((country) =>
+    country.name.common.toLowerCase().includes(searchField.toLocaleLowerCase())
+  );
+
+  console.log(searchData);
+
   return (
     <main className={styles.home}>
       <div className={styles.searchRow}>
-        <Searchbox />
+        <Searchbox handleOnChange={handleOnChange} />
         <Filter
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
         />
       </div>
       <div className={styles.countries}>
-        {filteredData.map((country) => (
+        {searchData.map((country) => (
           <Card
             key={country.name.official}
             flagUrl={country.flags.svg}
