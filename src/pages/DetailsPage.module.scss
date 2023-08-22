@@ -1,0 +1,55 @@
+@use '../mixins' as *;
+@use '../colors' as *;
+
+.detailsPage {
+  @include container;
+  background-color: $white;
+}
+
+.backBtn {
+  padding: 0.5em 1.5em;
+  border: transparent;
+  background-color: $white;
+  vertical-align: middle;
+  margin-bottom: 4em;
+  cursor: pointer;
+  @include shadow;
+
+  svg {
+    margin-right: 0.4em;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 8em;
+
+  img {
+    width: 50%;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.info {
+  display: flex;
+  gap: 4em;
+
+  p {
+    margin-bottom: 0.6em;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.borders {
+  span {
+    font-weight: 600;
+  }
+}

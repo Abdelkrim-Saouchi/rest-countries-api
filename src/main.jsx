@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.scss';
 import FetchFailed from './components/FetchFailed.jsx';
 import Layout from './components/Layout.jsx';
-import CountryPage from './pages/CountryPage.jsx';
+import DetailsPage, { loader as detailsLoader } from './pages/DetailsPage.jsx';
 import Home, { loader as homeLoader } from './pages/Home.jsx';
 
 const router = createBrowserRouter([
@@ -18,8 +18,9 @@ const router = createBrowserRouter([
         loader: homeLoader,
       },
       {
-        path: 'country',
-        element: <CountryPage />,
+        path: 'details',
+        element: <DetailsPage />,
+        loader: detailsLoader,
       },
     ],
   },
