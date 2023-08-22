@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import App from './App.jsx';
 import './App.scss';
+import FetchFailed from './components/FetchFailed.jsx';
 import Layout from './components/Layout.jsx';
 import CountryPage from './pages/CountryPage.jsx';
 import Home, { loader as homeLoader } from './pages/Home.jsx';
@@ -14,6 +14,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+        errorElement: <FetchFailed />,
         loader: homeLoader,
       },
       {

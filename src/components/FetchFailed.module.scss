@@ -1,0 +1,6 @@
+@use '../mixins' as *;
+
+.errorPage {
+  @include container();
+  font-size: 2rem;
+}
