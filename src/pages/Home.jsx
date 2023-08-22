@@ -41,17 +41,19 @@ const Home = () => {
         />
       </div>
       <div className={styles.countries}>
-        {searchData.map((country) => (
-          <Card
-            key={country.name.official}
-            flagUrl={country.flags.svg}
-            flagAlt={country.flags.alt}
-            name={country.name.common}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-          />
-        ))}
+        {searchData.length === 0
+          ? 'Result not found.'
+          : searchData.map((country) => (
+              <Card
+                key={country.name.official}
+                flagUrl={country.flags.svg}
+                flagAlt={country.flags.alt}
+                name={country.name.common}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+              />
+            ))}
       </div>
     </main>
   );
