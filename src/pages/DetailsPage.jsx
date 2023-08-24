@@ -5,9 +5,12 @@ import { getCountries } from '../api/getCountries';
 import CountryTag from '../components/CountryTag';
 import styles from './DetailsPage.module.scss';
 
-export async function loader() {
+export async function loader({ params }) {
   const countries = await getCountries();
-  return [countries, countries[100]];
+  const targetCountry = countries.find(
+    (country) => country.name.common === params.countryId
+  );
+  return [countries, targetCountry];
 }
 
 const DetailsPage = () => {

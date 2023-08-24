@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         loader: homeLoader,
       },
       {
-        path: 'details',
+        path: 'details/:countryId',
         element: <DetailsPage />,
         loader: detailsLoader,
       },
