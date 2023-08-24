@@ -22,6 +22,7 @@
 
 .content {
   display: flex;
+  align-items: flex-start;
   gap: 8em;
 
   img {
@@ -30,6 +31,7 @@
 }
 
 .details {
+  padding-top: 2em;
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -38,6 +40,10 @@
 .info {
   display: flex;
   gap: 4em;
+
+  div {
+    flex: 1;
+  }
 
   p {
     margin-bottom: 0.6em;
@@ -51,6 +57,7 @@
 .borders {
   display: flex;
   align-items: start;
+  flex-wrap: wrap;
 
   p {
     font-weight: 600;
@@ -64,5 +71,36 @@
     gap: 0.8em;
     margin-block: 0.6em;
     margin-left: 0.3em;
+  }
+}
+
+@media (max-width: 980px) {
+  .content {
+    flex-direction: column;
+    // align-items: center;
+    gap: 2em;
+
+    img {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    img {
+      width: 100%;
+    }
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+@media (max-width: 375px) {
+  .detailsPage {
+    @include container(2em);
   }
 }
