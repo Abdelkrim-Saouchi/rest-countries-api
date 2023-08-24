@@ -6,11 +6,14 @@
   flex-direction: column;
   gap: 0.8em;
   background-color: $white;
-  max-width: 250px;
+  color: $very-dark-blue-lightM;
+  max-width: 280px;
+  height: 320px;
   @include shadow();
   @include border-shape();
   padding-bottom: 0.5em;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .card img {

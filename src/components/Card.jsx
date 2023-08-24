@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './Card.module.scss';
 
 const Card = ({ flagUrl, flagAlt, name, population, region, capital }) => {
   return (
-    <div className={styles.card}>
+    <Link className={styles.card} to={`/details/${name}`}>
       <img src={flagUrl} alt={flagAlt} />
 
       <h2>{name}</h2>
@@ -18,7 +19,7 @@ const Card = ({ flagUrl, flagAlt, name, population, region, capital }) => {
           <span>Capital:</span> {capital ? capital[0] : 'unknown'}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
