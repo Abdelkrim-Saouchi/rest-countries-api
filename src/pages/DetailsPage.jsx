@@ -1,6 +1,6 @@
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { getCountries } from '../api/getCountries';
 import CountryTag from '../components/CountryTag';
 import styles from './DetailsPage.module.scss';
@@ -15,6 +15,7 @@ export async function loader({ params }) {
 
 const DetailsPage = () => {
   const [countries, targetCountry] = useLoaderData();
+  const navigate = useNavigate();
 
   // transform country's Abbreviation to full name
   const targetBordersAbr = targetCountry.borders || [];
@@ -24,9 +25,11 @@ const DetailsPage = () => {
       .common;
   });
 
+  const backToPreviousPage = () => navigate(-1);
+
   return (
     <main className={styles.detailsPage}>
-      <button className={styles.backBtn}>
+      <button className={styles.backBtn} onClick={backToPreviousPage}>
         <FontAwesomeIcon icon={faArrowLeftLong} /> Back
       </button>
 
