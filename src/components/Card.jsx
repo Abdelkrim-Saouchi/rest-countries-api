@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './Card.module.scss';
 
 const Card = ({ flagUrl, flagAlt, name, population, region, capital }) => {
-  console.log(flagAlt);
   return (
     <Link className={styles.card} to={`/details/${name}`}>
       <img src={flagUrl} alt={flagAlt || `flag of country ${name}`} />

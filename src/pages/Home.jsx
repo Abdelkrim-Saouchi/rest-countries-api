@@ -29,8 +29,6 @@ const Home = () => {
     country.name.common.toLowerCase().includes(searchField.toLocaleLowerCase())
   );
 
-  console.log(searchData);
-
   return (
     <main className={styles.home}>
       <div className={styles.searchRow}>
