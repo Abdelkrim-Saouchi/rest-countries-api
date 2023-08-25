@@ -24,6 +24,10 @@
   border: transparent;
   font-weight: 600;
   cursor: pointer;
+
+  svg {
+    margin-right: 0.2em;
+  }
 }
 
 @media (max-width: 650px) {

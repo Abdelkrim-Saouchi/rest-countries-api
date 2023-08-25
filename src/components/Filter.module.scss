@@ -6,6 +6,7 @@
   background-color: var(--elements-color);
   color: inherit;
   cursor: pointer;
+  @include border-shape();
 }
 
 .dropDownLabel {
