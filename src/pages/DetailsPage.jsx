@@ -19,7 +19,6 @@ const DetailsPage = () => {
 
   // transform country's Abbreviation to full name
   const targetBordersAbr = targetCountry.borders || [];
-  console.log(targetBordersAbr);
   const targetBordersNames = targetBordersAbr.map((targetBorder) => {
     return countries.find((country) => country.cca3 === targetBorder).name
       .common;
