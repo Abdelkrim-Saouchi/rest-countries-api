@@ -1,11 +1,11 @@
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Outlet } from 'react-router-dom';
-
 import styles from './Layout.module.scss';
+
 const Layout = () => {
   return (
-    <>
+    <div>
       <header className={styles.header}>
         <h1>Where is the world?</h1>
         <button>
@@ -13,7 +13,7 @@ const Layout = () => {
         </button>
       </header>
       <Outlet />
-    </>
+    </div>
   );
 };
 
