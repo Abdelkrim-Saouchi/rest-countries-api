@@ -5,7 +5,7 @@ import styles from './SearchBox.module.scss';
 
 const Searchbox = ({ handleOnChange }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} tabIndex="0">
       <FontAwesomeIcon icon={faMagnifyingGlass} />
       <input
         type="text"

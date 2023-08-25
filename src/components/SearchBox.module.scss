@@ -19,6 +19,15 @@
   padding: 1em 2em;
 }
 
+::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: inherit;
+}
+
 @media (max-width: 650px) {
   .container {
     width: 100%;

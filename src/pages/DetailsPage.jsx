@@ -29,7 +29,11 @@ const DetailsPage = () => {
 
   return (
     <main className={styles.detailsPage}>
-      <button className={styles.backBtn} onClick={backToPreviousPage}>
+      <button
+        className={styles.backBtn}
+        onClick={backToPreviousPage}
+        aria-label="back to previous page"
+      >
         <FontAwesomeIcon icon={faArrowLeftLong} /> Back
       </button>
 
