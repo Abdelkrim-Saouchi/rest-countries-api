@@ -5,7 +5,7 @@ import styles from './Layout.module.scss';
 
 const Layout = () => {
   return (
-    <div>
+    <div className="dark">
       <header className={styles.header}>
         <h1>Where is the world?</h1>
         <button>

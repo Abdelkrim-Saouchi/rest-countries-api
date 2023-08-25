@@ -2,7 +2,8 @@
 @use '../mixins' as *;
 
 .home {
-  background-color: $very-light-gray;
+  background-color: inherit;
+  color: inherit;
   min-height: 100dvh;
   @include container;
   padding-block: 2em;

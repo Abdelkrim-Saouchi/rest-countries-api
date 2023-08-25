@@ -1,15 +1,16 @@
-@use '../colors' as *;
 @use '../mixins' as *;
 
 .dropDownContainer {
   position: relative;
   width: 180px;
+  background-color: var(--elements-color);
+  color: inherit;
+  cursor: pointer;
 }
 
 .dropDownLabel {
   height: 100%;
   padding: 1em 1.5em;
-  background-color: $white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,7 +23,8 @@
 .dropDownMenu {
   margin-top: 0.4em;
   list-style: none;
-  background-color: $white;
+  background-color: inherit;
+  color: inherit;
   padding: 1em 1em;
   position: absolute;
   width: 100%;
@@ -32,9 +34,8 @@
 
 .dropDownMenu li {
   padding: 0.4em 0.2em;
-  cursor: pointer;
 
   &:is(:hover, :focus) {
-    background-color: $very-light-gray;
+    opacity: 0.8;
   }
 }

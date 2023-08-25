@@ -19,14 +19,21 @@ body {
 }
 
 .light {
-  $main-bg: $very-light-gray;
-  $text-color: $very-dark-blue-lightM;
-  $input-text-color: $dark-gray;
-  $elements-color: $white;
+  --main-bg: #{$very_light_gray};
+  --text-color: #{$very_dark_blue_lightM};
+  --input-text-color: #{$dark_gray};
+  --elements-color: #{$white};
+
+  background-color: var(--main-bg);
+  color: var(--text_color);
 }
 
 .dark {
-  $main-bg: $very-dark-blue-darkM;
-  $text-color: $white;
-  $elements-color: $dark-blue;
+  --main-bg: #{$very_dark_blue_darkM};
+  --text-color: #{$white};
+  --input-text-color: #{$white};
+  --elements-color: #{$dark_blue};
+
+  background-color: var(--main-bg);
+  color: var(--text-color);
 }

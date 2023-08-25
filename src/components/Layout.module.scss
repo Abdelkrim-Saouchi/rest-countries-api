@@ -1,8 +1,8 @@
-@use '../colors' as *;
 @use '../mixins' as *;
 
 .header {
-  background-color: $white;
+  background-color: var(--elements-color);
+  color: inherit;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,6 +20,7 @@
 
 .header button {
   background-color: transparent;
+  color: inherit;
   border: transparent;
   font-weight: 600;
   cursor: pointer;

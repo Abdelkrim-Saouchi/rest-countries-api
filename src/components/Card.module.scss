@@ -1,12 +1,11 @@
-@use '../colors' as *;
 @use '../mixins' as *;
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 0.8em;
-  background-color: $white;
-  color: $very-dark-blue-lightM;
+  background-color: var(--elements-color);
+  color: inherit;
   max-width: 250px;
   height: 300px;
   @include shadow();
