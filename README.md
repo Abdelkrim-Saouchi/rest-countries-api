@@ -46,3 +46,4 @@ Users should be able to:
 1. Basic concepts of sass.
 2. How to implement Dark/Light mode.
 3. How to implement Custom Dropdown menu.
+4. Responsive Design.
