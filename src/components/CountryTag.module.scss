@@ -3,7 +3,8 @@
 
 .tag {
   text-decoration: none;
-  color: $very-dark-blue-lightM;
+  background-color: var(--elements-color);
+  color: inherit;
   padding: 0.2em 1em;
   margin-left: 0.5em;
   @include shadow(2px, 2px);
